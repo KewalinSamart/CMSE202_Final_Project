@@ -1,0 +1,38 @@
+class blood_cell():
+    '''
+    This is the blood cells class and it allows the blood cells to move around as well as absorb oxygen and carbon dioxide.
+    '''
+    
+    def __init__(self, shape='round', molecule, pos): #We could change the shape attribute to an oxygen capacity attribute
+        self.shape = shape
+        self.molecule = molecule
+        self.pos = pos
+        
+        if self.shape == 'round':
+            oxygen_cap = 6
+            carbon_cap = 5
+        elif self.shape == 'sickle':
+            oxygen_cap = 3
+            carbon_cap = 2
+        
+        self.oxygen_cap = oxygen_cap
+        self.carbon_cap = carbon_cap
+        
+    def absorb(self):
+        # Determine if blood cell is in lungs using nearest neighbor, if it is then it picks up the maximum amount of oxygen and releases
+        # CO2
+      
+        # Determine if blood cell is in an organ using nearest neighbor, if it is then it picks up the max amount of CO2 and releases
+        # oxygen
+        pass
+    
+    def travel(self):
+        if self.molecule == 'oxygen':
+            # use nearest neighbor function to assess neighbors, and if neighbor is a vein and it is the closest to an organ, then it moves
+            # to that grid point
+            pass
+        elif self.molecule == 'carbon':
+            # use nearest neighbor function to assess neighbors, and if neighbor is an artery and is closest to the heart, then it moves to
+            # that grid point
+            pass
+    
