@@ -82,4 +82,5 @@ class Board():
         self.side_art_organ3 = self.board[205:215,120:170]
     
     def plot_board(self):
+        plt.figure(figsize=(20,10))
         plt.imshow(self.board) 
