@@ -14,11 +14,11 @@ class blood_cell():
     This is the blood cells class and it allows the blood cells to move around as well as absorb oxygen and carbon dioxide.
     '''
     
-    def __init__(self, shape='round', molecule, x_dim, y_dim): #We could change the shape attribute to an oxygen capacity attribute
+    def __init__(self, x_dims, y_dims, shape='round'): #We could change the shape attribute to an oxygen capacity attribute
         self.shape = shape
-        self.molecule = molecule
-        self.x_dim = random.randint(0, x_dim)
-        self.y_dim = random.randint(0, y_dim)
+        #self.molecule = molecule
+        self.x_dim = random.randint(x_dims[0], x_dims[1])
+        self.y_dim = random.randint(y_dims[0], y_dims[1])
         
         if self.shape == 'round':
             oxygen_cap = 6
@@ -36,10 +36,24 @@ class blood_cell():
       
         # Determine if blood cell is in an organ using nearest neighbor, if it is then it picks up the max amount of CO2 and releases
         # oxygen
-        neighbors = getNeighborValues(self.x_dim, self.y_dim, board)
-        lung = []
-        for i in 
-        pass
+        #neighbors = getNeighborValues(self.x_dim, self.y_dim, board)
+        if 70 < self.x_dim < 135 and 5 < self.y_dim < 40:
+            #ox_supply = self.oxygen_cap
+            #carb_supply = 0
+            color = 'red'
+        elif 80 < self.x_dim < 120 and ((140 < self.y_dim < 160) or (170 < self.y_dim < 190 ) or (200 < self.y_dim < 220)):
+            #ox_supply = 0
+            #carb_supply = self.carbon_cap
+            color = 'blue'
+            
+        self.color = color
+        
+    def draw(self, board):
+        
+        plt.figure(figsize=(20,10))
+        plt.imshow(board) 
+        plt.scatter(self.x_dim, self.y_dim, color=self.color)
+
     
     def travel(self, board):
         pathway = getNeighborValues(self.pos[0], self.pos[1], board)
