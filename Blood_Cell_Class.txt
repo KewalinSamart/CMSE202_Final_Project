@@ -1,12 +1,24 @@
+def getNeighborValues(i,j, board):
+    # The following list contains the indices of the neighbors for a pixel at (i.j)
+    neighborhood = [(i-1, j), (i, j-1), (i+1, j), (i, j+1)]
+    
+    neighbor_values = []
+    for neighbor in neighborhood:
+        if onBoard(neighbor[0], neighbor[1], board) == True:
+            neighbor_values.append(board[neighbor[0],neighbor[1]])
+    return neighbor_values
+
+
 class blood_cell():
     '''
     This is the blood cells class and it allows the blood cells to move around as well as absorb oxygen and carbon dioxide.
     '''
     
-    def __init__(self, shape='round', molecule, pos): #We could change the shape attribute to an oxygen capacity attribute
+    def __init__(self, shape='round', molecule, x_dim, y_dim): #We could change the shape attribute to an oxygen capacity attribute
         self.shape = shape
         self.molecule = molecule
-        self.pos = pos
+        self.x_dim = random.randint(0, x_dim)
+        self.y_dim = random.randint(0, y_dim)
         
         if self.shape == 'round':
             oxygen_cap = 6
@@ -18,21 +30,24 @@ class blood_cell():
         self.oxygen_cap = oxygen_cap
         self.carbon_cap = carbon_cap
         
-    def absorb(self):
+    def transfer(self):
         # Determine if blood cell is in lungs using nearest neighbor, if it is then it picks up the maximum amount of oxygen and releases
         # CO2
       
         # Determine if blood cell is in an organ using nearest neighbor, if it is then it picks up the max amount of CO2 and releases
         # oxygen
+        neighbors = getNeighborValues(self.x_dim, self.y_dim, board)
+        lung = []
+        for i in 
         pass
     
-    def travel(self):
-        if self.molecule == 'oxygen':
-            # use nearest neighbor function to assess neighbors, and if neighbor is a vein and it is the closest to an organ, then it moves
-            # to that grid point
-            pass
-        elif self.molecule == 'carbon':
-            # use nearest neighbor function to assess neighbors, and if neighbor is an artery and is closest to the heart, then it moves to
-            # that grid point
-            pass
+    def travel(self, board):
+        pathway = getNeighborValues(self.pos[0], self.pos[1], board)
+        
+        surround
+        if pathway[i,j] == 3 
+        
+        for i in range(board.shape[0]-1):
+            for j in range(board.shape[1]-1):
+                if
     
