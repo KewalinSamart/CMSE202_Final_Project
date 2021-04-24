@@ -18,8 +18,10 @@ class oxygen():
         3% of Oxygen is diffused/dissolved into plasma within blood 
         This is shown through an oxygen object being drawn within the arteries
         '''
-       
-        plt.scatter(self.x, self.y, c='blue') #plots blue marker 'oxygen' on board at artery location
+        
+        prob = random.random()
+        if prob > 0.97:
+            plt.scatter(self.x, self.y, c='blue') #plots blue marker 'oxygen' on board at artery location
         
     def draw(self):
         
