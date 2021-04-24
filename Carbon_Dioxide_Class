@@ -20,15 +20,21 @@ class carbon_dioxide():
         c_x = self.x 
         c_y = self.y 
         
+        on_board = 0 
+        self.on_board = on_board
+        
     def enter_blood(self):
         
         '''
         7% of Carbon Dioxide is diffused/dissolved into plasma within blood 
         This is shown through a carbon dioxide object being drawn within the veins
         '''
+        
+        param = 1 
         prob = random.random()
         if prob > 0.93:
             plt.scatter(self.x, self.y, c='lawngreen') #plots green marker 'carbon dioxide' on board at vein location
+            self.on_board = param
             
     def draw(self):
         
@@ -36,7 +42,10 @@ class carbon_dioxide():
         Draws the carbon dioxide object on the board 
         '''
         
-        plt.scatter(self.x, self.y, c='lawngreen')
+        if self.on_board == 1:
+            plt.scatter(self.x, self.y, c='lawngreen')
+        else:
+            pass 
 
     def movement_down(self):
         

@@ -1,6 +1,6 @@
 class oxygen():
     
-    def __init__ (self, artery_locationx = 115, artery_locationy = 40):
+    def __init__ (self, artery_locationx = 120, artery_locationy = 40):
         
         '''
         Intializing the oxygen object and its location 
@@ -10,7 +10,9 @@ class oxygen():
         self.y = artery_locationy #location to be drawn 
     
         o_x = self.x 
-        o_y = self.y 
+        o_y = self.y
+        on_board = 0 
+        self.on_board = on_board
         
     def enter_blood(self):
         
@@ -18,9 +20,12 @@ class oxygen():
         3% of Oxygen is diffused/dissolved into plasma within blood 
         This is shown through an oxygen object being drawn within the arteries
         '''
+        
+        param = 1 
         prob = random.random()
         if prob > 0.97:
             plt.scatter(self.x, self.y, c='aqua') #plots blue marker 'oxygen' on board at artery location
+            self.on_board = param 
             
     def draw(self):
         
@@ -28,7 +33,10 @@ class oxygen():
         Draws the oxygen object on the board 
         '''
         
-        plt.scatter(self.x, self.y, c='aqua')
+        if self.on_board == 1:
+            plt.scatter(self.x, self.y, c='aqua')
+        else:
+            pass 
 
     def movement_down(self):
         
