@@ -46,6 +46,20 @@ class carbon_dioxide():
             plt.scatter(self.x, self.y, c='lawngreen')
         else:
             pass 
+    
+    def movement_up(self):
+        
+        '''
+        Carbon dioxide moves through the veins towards lungs 
+        This is shown through the carbon dioxide object moving 1 unit upwards
+        '''
+        c_dy = 1
+        
+        c_x = self.x 
+        c_y = self.y - c_dy 
+        
+        self.x = c_x #carbon dioxide coordinates update after it moves 
+        self.y = c_y   
 
     def movement_down(self):
         
