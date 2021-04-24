@@ -1,0 +1,93 @@
+class oxygen():
+    
+    def __init__ (self, vein_locationx = 115, vein_locationy = 40):
+        
+        '''
+        Intializing the oxygen object and its location 
+        '''
+        
+        self.x = vein_locationx #location to be drawn 
+        self.y = vein_locationy #location to be drawn 
+    
+        o_x = self.x 
+        o_y = self.y 
+        
+    def enter_blood(self):
+        
+        '''
+        3% of Oxygen is diffused/dissolved into plasma within blood 
+        This is shown through an oxygen object being drawn within the arteries
+        '''
+       
+        plt.scatter(self.x, self.y, c='blue') #plots blue marker 'oxygen' on board at artery location
+        
+    def draw(self):
+        
+        '''
+        Draws the oxygen object on the board 
+        '''
+        
+        plt.scatter(self.x, self.y, c='blue')
+
+    def movement_down(self):
+        
+        '''
+        Oxygen moves through the arteries towards organs
+        This is shown through the oxygen object moving 1 unit downwards
+        '''
+        o_dy = 1
+        
+        o_x = self.x 
+        o_y = self.y + o_dy 
+        
+        self.x = o_x #oxygen coordinates update after it moves 
+        self.y = o_y   
+        
+    def movement_right(self):
+        
+        '''
+        Oxygen moves through the veins towards organs  
+        This is shown through the oxygen object moving 1 unit to the right 
+        '''
+        
+        o_dx = 1 
+        
+        o_x = self.x + o_dx
+        o_y = self.y 
+        
+        self.x = o_x #oxygen coordinates update after it moves 
+        self.y = o_y      
+        
+    def movement_left(self):
+        
+        '''
+        Oxygen moves through the veins towards organs 
+        This is shown through the oxygen object moving 1 unit to the left 
+        '''
+        
+        o_dx = 1
+        
+        o_x = self.x - o_dx
+        o_y = self.y 
+        
+        self.x = o_x #oxygen coordinates update after it moves 
+        self.y = o_y      
+
+    def board_location(self):
+        
+        '''
+        Provides the current location of the oxygen object on the board
+        '''
+        
+        return self.x, self.y 
+    
+    def distance (self, organ_locationx, organ_locationy): 
+        
+        '''
+        Provides distance between oxygen object and inputed organ location
+        '''
+    
+        distance = ((organ_locationx - self.x)**2) + ((organ_locationy - self.y)**2) 
+        #distance formula, using organ and current oxygen molecule location 
+        return distance
+
