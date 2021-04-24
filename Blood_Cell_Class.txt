@@ -55,13 +55,30 @@ class blood_cell():
         plt.scatter(self.x_dim, self.y_dim, color=self.color)
 
     
-    def travel(self, board):
-        pathway = getNeighborValues(self.pos[0], self.pos[1], board)
+    def move_left(self):
+        # Subtract from the x coordinate, moving 1 unit left, y_coordinate can stay the same
+        dx = -1
+        new_xL = self.x_dim + dx
+        new_yL = self.y_dim # or we could have a tiny range of back and forth y movement in a loop (new_yL = self.y_dim + (-1)^n_steps)
         
-        surround
-        if pathway[i,j] == 3 
+        self.x_dim = new_xL
+        self.y_dim = new_yL
+    
+    def move_up(self):
+        # Subtract from y coordinate, moving 1 unit up, x_coordinate can stay the same
+        dy = -1
+        new_xU = self.x_dim  # or we could have a tiny range of back and forth x movement in a loop (new_xU = self.x_dim + (-1)^n_steps)
+        new_yU = self.y_dim + dy 
         
-        for i in range(board.shape[0]-1):
-            for j in range(board.shape[1]-1):
-                if
+        self.x_dim = new_xU
+        self.y_dim = new_yU
+        
+    def move_right(self):
+        # Add to x coordinate, moving 1 unit right, y_coordinate can stay the same
+        dx = 1
+        new_xR = self.x_dim + dx
+        new_yR = self.y_dim # or we could have a tiny range of back and forth y movement in a loop (new_yR = self.y_dim + (-1)^n_steps)
+        
+        self.x_dim = new_xR
+        self.y_dim = new_yR
     
