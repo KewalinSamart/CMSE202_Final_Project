@@ -1,0 +1,111 @@
+class carbon_dioxide():
+    
+    def __init__ (self, vein_locationx = [85,85,85], vein_locationy = [150,180,210]):
+        
+        '''
+        Intializing the carbon dioxide object and its location 
+        '''
+        
+        prob = random.random()
+        if prob <= 0.33: 
+            self.x = vein_locationx[0]
+            self.y = vein_locationy[0]
+        elif prob <= 0.66 and prob > 0.33: 
+            self.x = vein_locationx[1]
+            self.y = vein_locationy[1]         
+        else: 
+            self.x = vein_locationx[2]
+            self.y = vein_locationy[2]   
+
+        c_x = self.x 
+        c_y = self.y 
+        
+        on_board = 0 
+        self.on_board = on_board
+        
+    def enter_blood(self):
+        
+        '''
+        7% of Carbon Dioxide is diffused/dissolved into plasma within blood 
+        This is shown through a carbon dioxide object being drawn within the veins
+        '''
+        
+        param = 1 
+        prob = random.random()
+        if prob > 0.93:
+            plt.scatter(self.x, self.y, c='lawngreen') #plots green marker 'carbon dioxide' on board at vein location
+            self.on_board = param
+            
+    def draw(self):
+        
+        '''
+        Draws the carbon dioxide object on the board 
+        '''
+        
+        if self.on_board == 1:
+            plt.scatter(self.x, self.y, c='lawngreen')
+        else:
+            pass 
+
+    def movement_down(self):
+        
+        '''
+        Carbon dioxide moves through the veins towards lungs 
+        This is shown through the carbon dioxide object moving 1 unit downwards
+        '''
+        c_dy = 1
+        
+        c_x = self.x 
+        c_y = self.y + c_dy 
+        
+        self.x = c_x #carbon dioxide coordinates update after it moves 
+        self.y = c_y   
+        
+    def movement_right(self):
+        
+        '''
+        Carbon dioxide moves through the veins towards lungs
+        This is shown through the carbon dioxide object moving 1 unit to the right 
+        '''
+        
+        c_dx = 1 
+        
+        c_x = self.x + c_dx
+        c_y = self.y 
+        
+        self.x = c_x #carbon dioxide coordinates update after it moves 
+        self.y = c_y      
+        
+    def movement_left(self):
+        
+        '''
+        Carbon dioxide moves through the veins towards lungs 
+        This is shown through the carbon dioxide object moving 1 unit to the left 
+        '''
+        
+        c_dx = 1
+        
+        c_x = self.x - c_dx
+        c_y = self.y 
+        
+        self.x = c_x #carbon dioxide coordinates update after it moves 
+        self.y = c_y      
+
+    def board_location(self):
+        
+        '''
+        Provides the current location of the carbon dioxide object on the board
+        '''
+        
+        return self.x, self.y 
+    
+    def distance (self, lung_locationx = 85, lung_locationy = 40): 
+        
+        '''
+        Provides distance between carbon dioxide object and lungs 
+        '''
+    
+        distance = ((lung_locationx - self.x)**2) + ((lung_locationy - self.y)**2) 
+        #distance formula, using lungs and current carbon dioxide location location 
+        return distance
+
