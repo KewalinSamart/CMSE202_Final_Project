@@ -37,6 +37,21 @@ class oxygen():
             plt.scatter(self.x, self.y, c='aqua')
         else:
             pass 
+            
+    def movement_up(self):
+        
+        '''
+        Oxygen moves through the arteries towards the heart and the lung
+        This is shown through the oxygen object moving 1 unit upwards
+        '''
+        o_dy = 1
+        
+        o_x = self.x 
+        o_y = self.y - o_dy 
+        
+        self.x = o_x #oxygen coordinates update after it moves 
+        self.y = o_y   
+
 
     def movement_down(self):
         
