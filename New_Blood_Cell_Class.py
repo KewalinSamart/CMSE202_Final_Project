@@ -98,16 +98,6 @@ class blood_cell():
         
         return self.x, self.y
     
-    def distance (self, organ_locationx, organ_locationy): 
-        
-        '''
-        Provides distance between oxygen object and inputed organ location
-        '''
-    
-        distance = ((organ_locationx - self.x)**2) + ((organ_locationy - self.y)**2) 
-        #distance formula, using organ and current oxygen molecule location 
-        return distance
-    
     def blood_cell_simulation(self):
         '''
         Blood Cell Object Movement
