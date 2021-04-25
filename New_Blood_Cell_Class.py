@@ -27,24 +27,6 @@ class blood_cell():
         b_x = self.x 
         b_y = self.y
         
-    def transfer(self):
-        # Determine if blood cell is in lungs using nearest neighbor, if it is then it picks up the maximum amount of oxygen and releases
-        # CO2
-      
-        # Determine if blood cell is in an organ using nearest neighbor, if it is then it picks up the max amount of CO2 and releases
-        # oxygen
-        #neighbors = getNeighborValues(self.x_dim, self.y_dim, board)
-        if 70 < self.x < 135 and 5 < self.y < 40:
-            #ox_supply = self.oxygen_cap
-            #carb_supply = 0
-            color = 'red'
-        elif 80 < self.x < 120 and ((140 < self.y < 160) or (170 < self.y < 190 ) or (200 < self.y < 220)):
-            #ox_supply = 0
-            #carb_supply = self.carbon_cap
-            color = 'blue'
-            
-        self.color = color
-        
     def draw(self,color):
          
         plt.scatter(self.x, self.y, c=color)
