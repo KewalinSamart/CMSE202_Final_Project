@@ -9,6 +9,6 @@
 
 ## Contributions
 - Jay Scott: most of the work in `General_O2_CO2_Class.py`, `simulation` function, docstrings, combined the code to run the model
-- Raymond Smith: most of the work in `Blood_Cell_Class.py`, placed images on the `simulation`, docstrings, discussion, combined the code to run the model
+- Raymond Smith: most of the work in `Blood_Cell_Class.py`, placed images on the board, docstrings, discussion, combined the code to run the model
 - Chris Brown: `simulation` function, docstrings, combined the code to run the model
 - Kewalin Samart: designed the board, `simulation` function, docstrings, gathered all the code into `CMSE_202_Final_Project_Health_2.ipynb`, organized files, background and motivation
