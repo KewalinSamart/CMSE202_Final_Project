@@ -10,10 +10,8 @@ class oxygen_carbon_dioxide():
         If the object is aqua, then it represents oxygen. If the object is orange, then it represents carbon dioxide. 
         '''
         
-        self.coords = dims
-        self.dims = random.sample(dims, 1)
-        self.x = dims[0][0] #x coordinate
-        self.y = dims[0][1] #y coordinate
+        self.x = dims[0]
+        self.y = dims[1]
         
         self.color = color #object's color 
             
