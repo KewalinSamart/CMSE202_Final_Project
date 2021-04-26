@@ -1,13 +1,4 @@
-def getNeighborValues(i,j, board):
-    # The following list contains the indices of the neighbors for a pixel at (i.j)
-    neighborhood = [(i-1, j), (i, j-1), (i+1, j), (i, j+1)]
-    
-    neighbor_values = []
-    for neighbor in neighborhood:
-        if onBoard(neighbor[0], neighbor[1], board) == True:
-            neighbor_values.append(board[neighbor[0],neighbor[1]])
-    return neighbor_values
-
+import random
 
 class blood_cell():
     '''
