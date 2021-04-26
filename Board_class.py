@@ -1,6 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
-%matplotlib inline
 
 class Board():
     def __init__(self):
@@ -80,7 +78,3 @@ class Board():
         # side artery organ no.3
         self.board[205:215,120:170] = 2
         self.side_art_organ3 = self.board[205:215,120:170]
-    
-    def plot_board(self):
-        plt.figure(figsize=(20,10))
-        plt.imshow(self.board) 
